@@ -34,7 +34,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/docker-k8s-api:${{ github.sha }}
+          tags: |
+             ${{ secrets.DOCKER_USERNAME }}/docker-k8s-api:${{ github.sha }}
+             ${{ secrets.DOCKER_USERNAME }}/docker-k8s-api:latest
 
       - name: ✅ Done
         run: echo "Image pushed successfully to Docker Hub!"
