@@ -32,10 +32,9 @@ jobs:
       - name: Build and push Docker image (Buildx)
         uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/docker-k8s-api:${{ github.sha }}
-            ${{ secrets.DOCKER_USERNAME }}/docker-k8s-api:latest
+          tags: docker-k8s-api:${{ github.sha }}
 
       - name: ✅ Done
         run: echo "Image pushed successfully to Docker Hub!"
