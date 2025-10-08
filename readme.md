@@ -83,7 +83,7 @@ kubectl describe pod <pod-name>
 kubectl logs <pod-name>
 ```
 
-6. kubectl scale deployment docker-k8s-api-deployment --replicas=0
+6. Stop pods temporarily (scale deployment to 0)
 
 ```bash
 kubectl scale deployment docker-k8s-api-deployment --replicas=0
