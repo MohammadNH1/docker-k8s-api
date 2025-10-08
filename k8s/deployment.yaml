@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-k8s-api-deployment
+spec:
+  replicas: 2  # Number of replicas you want
+  selector:
+    matchLabels:
+      app: docker-k8s-api
+  template:
+    metadata:
+      labels:
+        app: docker-k8s-api
+    spec:
+      containers:
+      - name:  docker-k8s-api-container
+        image: mohammadnh/docker-k8s-api:latest  # Replace this with your actual image
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3001  # Replace this with your application's port
+        

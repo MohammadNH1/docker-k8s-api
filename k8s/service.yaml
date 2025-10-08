@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker-k8s-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app:  docker-k8s-api
+  ports:
+    - port: 3001  # Port your service listens on inside the cluster
+      targetPort: 3001  # Port your application is listening on
